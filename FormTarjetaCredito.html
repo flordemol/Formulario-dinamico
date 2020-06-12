@@ -1,0 +1,104 @@
+<!doctype html>
+<html  lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<link href="FormTarjetaCredito.css" rel="stylesheet" type="text/css" media="screen"/>
+	<title>Formulario dinámico Tarjeta de crédito</title>
+	<link rel="icon" href="img\chip.png" sizes="36x36" type="image/jpg"> 
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+</head>
+
+<body>
+
+	<div class="contenedor">
+
+		<section id='tarjeta' class="tarjeta">
+			
+			<div class="tarjeta-frente">
+				<div class="logoBanco"  id="logoMarca">
+				</div> 
+				<img src="img/chip.png" alt="chip" class="chip"> 
+				<div class="datos">
+					<div class="grupo" id="numero">
+						<p id="numeroTarjeta">#### #### #### ####</p>
+					</div>
+					<div class="flexbox">
+						<div class="grupo" id="nombre">
+							<p class="label">Nombre:</p>
+							<p class="nombre">Juan Pérez</p>
+						</div>
+						<div class="grupo" id="vto">
+							<p class="label">Vencimiento:</p>
+							<p class="vto"><span class="mm">MM</span>/<span class="aa">AA</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tarjeta-dorso">
+				<div class="barraMagnetica"></div>
+				<section class="firmaCVV">
+					<div class="firma">
+						<p>Firma</p>
+						<div id="firma"><p></p></div>
+					</div>
+					<div class="cvv">
+						<p>CVV</p>
+						<div id="codigoV"><p></p></div>
+					</div>
+				</section>
+				<p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo. 
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+			</div>
+
+		</section>
+	
+		<section class="boton">
+			<button class="abrirForm" id="btnAbrirForm">
+				<i class="fas fa-arrow-down"></i>
+			</button>
+		</section>
+
+		<form action="" class="formulario" id="form">
+			<div class="grupo">
+				<label for="numTarj" class="form_label">Número de tarjeta:</label>
+				<input type="text" name="numTarj" id="numTarj" class="form_input" maxlength="19" autocomplete="off"/>
+			</div>
+			<div class="grupo">
+				<label for="nombre" class="form_label">Nombre (como figura en la tarjeta):</label>
+				<input type="text"  name="nombre" id="nombre" class="form_input" maxlength="19" placeholder=""/>
+			</div>
+			<div class="flexbox-vencimiento">
+				<div class="grupo-vencimiento">
+					<label for="vtoTarjeta" class="form_label">Vencimiento:</label>
+					<div class="grupoVto">
+						<div class="grupo-select">
+							<select name="mes" id="vtoTarjeta">
+								<option disabled selected>Mes</option>
+							</select>
+							<i class="fas fa-angle-down"></i>
+						</div>
+						<div class="grupo-select">
+							<select name="anio" id="vtoAnio">
+								<option disabled selected>Año</option>
+							</select>
+							<i class="fas fa-angle-down"></i>
+						</div>
+					</div>
+				</div>
+				<div class="grupo">
+					<label for="cvv" class="form_label">Código de verificación:</label>
+					<input type="text"  name="cvv" id="cvv" class="form_input" maxlength="3" placeholder="CVV"/>
+				</div>
+			</div>
+			<button type="submit" class="btn_confirmar">CONFIRMAR</button>
+		</form>
+
+	</div>
+
+	<script src="https://kit.fontawesome.com/57a2282fd9.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="main.js"></script>	
+    
+</body>
+</html>

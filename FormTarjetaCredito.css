@@ -1,0 +1,299 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgray;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Century Gothic, Helvetica, sans serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    color: #FFF;
+    z-index: 2;
+    transition: .3s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.tarjeta.active {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frente {
+    background-image: url("img/fondo.jpg");
+    background-size: cover;
+    min-height: 330px;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+.tarjeta-dorso {
+    background-image: url("img/fondo.jpg");
+    background-size: cover;
+    min-height: 330px;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 0 rgba(90, 116, 148, 0.3);
+    position: absolute;
+    top: 0px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.logoBanco {
+    text-align: right;
+    min-height: 50px;
+}
+
+.logoBanco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 80px;
+}
+
+.chip {
+    width: 60px;
+    display: block;
+}
+
+#numeroTarjeta {
+    font-family: 'Orbitron', sans-serif;
+    display: block;
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.grupo .nombre,
+.grupo .vto {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.grupo .label {
+    margin-bottom: 10px;
+    color: darkgrey;
+}
+
+.barraMagnetica {
+    background-color: #000;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 0;
+}
+
+.firmaCVV {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.firma {
+    margin-top: 70px;
+    width: 70%;
+}
+
+#firma {
+    height: 40px;
+    background: repeating-linear-gradient(skyblue 0, skyblue 5px, rgb(224, 241, 184) 5px, rgb(224, 241, 184) 10px);
+    font-size: 28px;
+    color: #000;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    text-transform: capitalize;
+}
+
+.cvv {
+    width: 20%;
+    margin-top: 70px;
+}
+
+#codigoV {
+    height: 40px;
+    background-color: whitesmoke;
+    font-size: 25px;
+    color: #000;
+    text-align: center;
+    line-height: 40px;
+}
+
+.leyenda {
+    margin-top: 20px;
+}
+
+.boton {
+    width: 100%;
+    text-align: center;
+}
+
+.abrirForm {
+    background-color: transparent;
+    border: transparent;
+    background-color: royalblue;
+    color: #FFF;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: -5px 4px 8px rgba(24, 56, 182, 0.4);
+    z-index: 3;
+    font-size: 25px;
+    position: relative;
+    margin-top: -25px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all .2s ease;
+}
+
+.abrirForm:hover {
+    background: #1850b1;
+}
+
+.abrirForm:focus {
+    outline: none;
+}
+
+.abrirForm.active {
+    transform: rotate(-180deg);
+} 
+
+.formulario {
+    z-index: 1;
+    background-color: #FFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -150px;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    padding-top: 185px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .3s ease-out;
+}  
+
+.formulario.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.grupo-vencimiento label,
+.formulario .grupo label {
+    display: block;
+    color: #7d8994;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.form_input {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border: 2px solid #CED6E0;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.flexbox-vencimiento {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grupo-vencimiento {
+    width: 100%;
+}
+
+.grupo-vencimiento .grupoVto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grupo-vencimiento select {
+    width: 100%;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    border: 2px solid #CED6E0;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: .3s ease all;
+    -webkit-appearance: none;
+}
+
+.grupo-select {
+    width: 100%;
+    margin-right: 20px;
+    position: relative;
+}
+
+.grupo-select i {
+    position: absolute;
+    color: #CED6E0;
+    transition: .3s ease all;
+    top: 15px;
+    right: 15px;
+}
+
+.form_input:hover,
+.grupo-vencimiento select:hover {
+    border: 2px solid #93BDED;
+}
+
+.grupo-select i:hover {
+    color: #93bfed;
+}
+
+.form_input:focus,
+.grupo-vencimiento select:focus {
+    outline: rgb(4, 4, 4);
+    box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+}
+
+.btn_confirmar {
+    display: block;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    font-size: 18px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 10px 0px rgba(0,85,212,0.4);
+    cursor: pointer;
+}
+
+.btn_confirmar:hover {
+    background: #1850b1;
+}
